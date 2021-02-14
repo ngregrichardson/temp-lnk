@@ -14,6 +14,7 @@ const App = () => {
       colorMode === "light"
         ? theme.colors.white["500"]
         : theme.colors.black["500"];
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [colorMode]);
 
   return (
