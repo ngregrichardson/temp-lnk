@@ -41,7 +41,7 @@ const Home = () => {
   const toast = useToast();
 
   const handleCreateLink = ({ redirectTo, type, maxClicks, maxDays }) => {
-    return fetch("http://localhost:8000/create", {
+    return fetch("/create", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

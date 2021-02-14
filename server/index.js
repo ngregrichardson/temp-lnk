@@ -68,7 +68,11 @@ app.post("/create", (req, res) => {
         type: "success",
         statusCode: 200,
         message: "Your link was created and copied to your clipboard!",
-        data: `http://localhost:8000/${shortId}`,
+        data: `${
+          process.env.ENV === "prod"
+            ? "https://templnk.iamnoah.dev"
+            : `http://localhost:${process.env.PORT || 8000}`
+        }/${shortId}`,
       });
       doc
         .update({ id: doc.id, shortId: shortId })

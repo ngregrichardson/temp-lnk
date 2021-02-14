@@ -30,6 +30,7 @@ jobs:
           touch .env
           echo GOOGLE_APPLICATION_CREDENTIALS=${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }} > .env
           echo PORT=${{ secrets.PORT }} >> .env
+          echo ENV=prod >> .env
         working-directory: ./server
 
       - name: Inject firebase credentials
